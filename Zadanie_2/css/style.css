@@ -35,7 +35,7 @@ h1 {
 }
 
 .post_id {
-  width: 400px;
+  width: 100%;
   grid-column: 1/2;
   justify-self: center;
   text-align: center;
@@ -44,6 +44,7 @@ h1 {
 }
 
 .post_title {
+  width: 100%;
   grid-column: 2/3;
   padding: 10px;
 }/*# sourceMappingURL=style.css.map */
