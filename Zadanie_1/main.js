@@ -5,10 +5,11 @@ const data = [
   { id: 4, firstName: 'Hawid', lastName: 'Dolisz', marks: [5, 4.5, 5, 5] },
   { id: 5, firstName: 'Dateusz', lastName: 'Mobija', marks: [2, 5, 2, 5] },
 ];
+
 const arr = [];
 let sum = 0;
 const calcAvarage = () => {
-  for (i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     arr.push(
       data[i].marks.reduce((pre, next) => pre + next) / data[i].marks.length
     );
