@@ -1,36 +1,3 @@
-const charSet1 = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-];
-const charSet2 = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '',
-  '',
-];
-
 const getData = () => {
   const url = `https:jsonplaceholder.typicode.com/posts`;
 
@@ -46,13 +13,15 @@ const getData = () => {
     .catch((err) => console.log(err));
 };
 
-const generateCharSet = () => {
-  const externalId = `${charSet2[Math.floor(Math.random() * charSet2.length)]}${
-    charSet2[Math.floor(Math.random() * charSet2.length)]
-  }${charSet1[Math.floor(Math.random() * charSet1.length)]}${
-    charSet1[Math.floor(Math.random() * charSet1.length)]
-  }${charSet1[Math.floor(Math.random() * charSet1.length)]}`;
-  return externalId;
+const generateRandomString = () => {
+  const length = Math.floor(Math.random() * 3) + 3;
+  let result = '';
+  const characters =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
 };
 
 const showData = (posts) => {
@@ -61,7 +30,7 @@ const showData = (posts) => {
 
   const arr = allPosts.map((allPosts) => ({
     internalId: allPosts.id,
-    externalId: generateCharSet(),
+    externalId: generateRandomString(),
     title: allPosts.title,
     body: allPosts.body,
   }));
